@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	{%if user.is_authenticated%}
+	<a href="{%url 'post-create'%}"><button class="adaugaPost"> Adauga Postare</button></a>
+	{%endif%}
+	<div class="container">
+		<div class="content">
+	{%for post in model%}
+
+			<div class="post">
+			
+				<div class ="capDePost">
+				<a href="{%url 'post-detail' post.id%}"><p class="titlu">{{ post.titlu }} | {{post.data_publicarii|date:"d/m/y"}} </p>	</a>	
+		
+				</div>
+
+				<p class="descriere">	{{ post.descriere }}</p>
+
+			</div>
+
+
+	{% endfor %}
+	</div>
+</div>
+
+
+
+
+{%endblock%}

@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	<div class="container-detail">
+	
+			
+				<div class ="capDePost">
+					<p class="titlu">{{ object.titlu }} | {{ object.data_publicarii|date:"d/m/y"}} </p>
+					<div class="butoanePost">
+					{%if user.is_authenticated%}
+					<a href="{%url 'post-delete' post.id%}"><button> Sterge </button></a>
+					<a href="{%url 'post-update' post.id%}"><button> Modifica </button></a>
+					{%endif%}
+					</div>
+				</div>
+				<p class="descriere"> {{ object.text }}</p>
+		
+
+
+</div>
+
+
+
+
+{%endblock%}

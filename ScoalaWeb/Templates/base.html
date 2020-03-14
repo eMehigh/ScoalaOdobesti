@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{%static 'Css\style.css'%}">
+</head>
+<body>	
+	<div class="container">
+		<div class="header">
+			<div class="navButtons">
+			<a href="{%url 'acasa'%}"><button>Acasa</button></a>
+			<a href="{%url 'activitati'%}"><button>Activități</button></a>
+			<a href="{%url 'contact'%}"><button>Contact</button></a>
+			<a href="{%url 'documente'%}"><button>Documente</button></a>
+			</div>
+
+			<div class="dropdown">
+				<button id="dropBtn"> ≡ </button>
+				<div class="dropdown-content">
+					<a href="{%url 'acasa'%}">Acasa</a>
+					<a href="{%url 'activitati'%}">Activități</a>
+					<a href="{%url 'contact'%}">Contact</a>
+					<a href="{%url 'documente'%}">Documente</a>
+				</div>
+			</div>
+		</div>
+
+
+		
+
+			<div class="content">
+				{%block content%}
+
+				{%endblock%}
+			</div>
+		
+		<div class="footer">
+			
+
+			<ul>
+				<li>Fax : 034619246461</li>
+				<li>Telefon : 438616845316</li>
+				<li>Email : scoala_odobesti@yahoo.com</li>
+			</ul>
+			<ul>
+				<a href="{%url 'acasa'%}"><li>Acasa</li></a>
+				<a href="{%url 'activitati'%}"><li>Activități</li></a>
+				<a href="{%url 'documente'%}"><li>Documente</li></a>
+				<br>
+			</ul>
+		</div>
+	</div>
+
+
+</body>
+</html>

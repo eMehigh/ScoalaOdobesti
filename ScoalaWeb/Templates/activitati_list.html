@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+
+{%block content%}
+	{%if user.is_authenticated%}
+	<a href="{%url 'activitati-upload'%}"><button class="adaugaPost"> Adauga Activitate</button></a>
+	{%endif%}
+<div class="container">
+	<div class="content">
+	
+	{%for activitati in activitati%}
+		<div class="post">
+			<div class="capDePost">
+				<p class="titlu">{{ activitati.titlu }} | {{activitati.data_publicarii|date:"d/m/y"}} </p>	</a>
+				<div class="butoanePost">
+				{%if user.is_authenticated%}
+					<a href="{%url 'activitati-delete' activitati.id%}"><button class="butonStergere">Sterge</button></a>
+				{%endif%}
+				</div>
+				</div>
+
+				<p class="descriere">{{ activitati.text }}</p>
+				<div class = "activitate">
+					{%for p in activitati.images_set.all%}	
+   						<div class="zoom">
+     						<img src="{{p.image.url}}" class=photo>
+   						</div>
+					{%endfor%}
+				</div>
+		</div>
+
+	{% endfor %}
+	</div>
+</div>
+
+
+
+
+{%endblock%}
+
